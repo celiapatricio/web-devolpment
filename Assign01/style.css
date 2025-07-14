@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: 'Verdana', 'Arial', sans-serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #003366;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease; /* Suavizar la transición */
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: lightgrey;
+}
+
+.navbar a::after {
+    content: ''; 
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: lightgrey;
+    transition: width 0.5s ease;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+
+/* Section Titles */
+h1 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-align: center;
+    color: #003366;
+    font-size: 2.5rem;
+    margin-top: 50px;
+}
+
+h2 {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    text-align: center;
+    color: #003366;
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+/* Text Content */
+.text {
+    font-family: 'Verdana', 'Arial', sans-serif;
+    margin: 10px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: justify;
+}
+
+/* PAGE 1 */
+
+/* Images */
+.img_container img {
+    max-width: 60%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
+
+.about_content .img_container img {
+    max-width: 35%; 
+}
+
+.sports_content .img_container img {
+    max-width: 40%; 
+}
+
+.img_container img:hover {
+    transform: scale(1.1);
+}
+
+/* Image Container */
+.img_container {
+    text-align: center;
+    margin: 0;
+}
+
+.img_container img {
+    display: block;
+    margin: 0 auto;
+}
+
+.img_title {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+    text-align: center;
+    font-family: 'Verdana', 'Arial', sans-serif;
+}
+
+/* Section Layout */
+.about_content, .academic_content, .family_content, .interests_content, .sports_content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Image Groups */
+.about_imgs, .academic_imgs, .hometown_imgs, .family_imgs, .sports_imgs {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
+}
+
+.interests_imgs {
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.interests_imgs video {
+    max-width: 40%;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Highlight Sections */
+section {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    max-width: 600px;
+    margin: 80px auto; 
+    margin-top: 0;
+}
+
+/* PAGE 2 */
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 1rem;
+    padding: 5px;
+}
+
+/* Header Row */
+thead th {
+    background-color: #003366;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Time Column */
+td:first-child, th:first-child {
+    font-weight: bold;
+    background-color: #e0e7ed;
+    color: #003366;
+    font-size: 0.85rem;
+    width: 7%;
+}
+
+/* Body Columns */
+tbody td {
+    width: calc((100% - 8%) / 5);
+    height: auto;
+}
+
+/* Alternating Row Colors */
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Hover Effect on Rows */
+tbody tr:hover {
+    background-color: #e0f7ff;
+}
+
+/* PAGE 3 */
+
+/* Images Styles */
+.places_list .img_container img {
+    max-width: 50%; 
+}
+
+.people_list .img_container img {
+    max-width: 35%; 
+}
+
+.food_list .img_container img {
+    max-width: 50%; 
+}
+
+/* Links */
+.link_text {
+    text-align: center;
+    font-size: 1rem;
+    margin: 20px 0;
+}
+
+.link_text a {
+    color: #003366;
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.link_text a:hover {
+    color: #00ccff;
+    border-bottom: 2px solid #00ccff;
+}

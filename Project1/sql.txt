@@ -1,0 +1,84 @@
+/* Delete table */
+DROP TABLE P1Books;
+
+/* Create the Book Table */
+CREATE TABLE P1Books(
+	BookID int PRIMARY KEY,
+	Title varchar(50),
+	Author varchar(50),
+	Topic varchar(50),
+	Genre varchar(50),
+	ISBN varchar(50),
+	DatePublished varchar(50),
+	Hardcover varchar(10)    
+);
+
+/* Insert books */
+INSERT INTO P1Books(BookID, Title, Author, Topic, Genre, ISBN, DatePublished, Hardcover) VALUES 
+    (1, 'The Hobbit', 'J.R.R. Tolkien', 'Adventure', 'Fantasy', '9780547928227', 'Sep 1937', 'Yes'),
+    (2, 'Harry Potter and the Sorcerer''s Stone', 'J.K. Rowling', 'Magic', 'Fantasy', '9780590353427', 'Jun 1997', 'Yes'),
+    (5, 'The Girl with the Dragon Tattoo', 'Stieg Larsson', 'Crime', 'Mystery', '9780307454546', 'Aug 2005', 'Yes'),
+    (6, 'Gone Girl', 'Gillian Flynn', 'Psychological Manipulation', 'Mystery', '9780307588371', 'May 2012', 'Yes'),
+    (7, 'Pride and Prejudice', 'Jane Austen', 'Love & Relationships', 'Romance', '9781503290563', 'Jan 1813', 'Yes'),
+    (8, 'The Notebook', 'Nicholas Sparks', 'Love & Relationships', 'Romance', '9780446676090', 'Oct 1996', 'Yes'),
+    (11, 'The Book Thief', 'Markus Zusak', 'World War II', 'Historical Fiction', '9780375842207', 'Mar 2006', 'Yes'),
+    (13, 'The Silent Patient', 'Alex Michaelides', 'Psychological Thriller', 'Thriller', '9781250301697', 'Feb 2019', 'Yes'),
+    (16, 'Educated', 'Tara Westover', 'Memoir', 'Non-Fiction', '9780399590504', 'Feb 2018', 'Yes'),
+    (18, 'Life of Pi', 'Yann Martel', 'Adventure', 'Fiction', '9780156027328', 'Sep 2001', 'Yes'),
+    (20, 'Mistborn: The Final Empire', 'Brandon Sanderson', 'Magic', 'Fantasy', '9780765311788', 'Jul 2006', 'Yes'),
+    (21, 'In Cold Blood', 'Truman Capote', 'Crime', 'Non-Fiction', '9780679745587', 'Jan 1966', 'Yes'),
+    (22, 'Big Little Lies', 'Liane Moriarty', 'Crime', 'Mystery', '9780425274866', 'Jul 2014', 'Yes'),
+    (24, 'Me Before You', 'Jojo Moyes', 'Love & Relationships', 'Romance', '9780143124542', 'Jan 2012', 'Yes'),
+    (27, 'Interview with the Vampire', 'Anne Rice', 'Vampires', 'Horror', '9780345337665', 'Apr 1976', 'Yes'),
+    (28, 'Let the Right One In', 'John Ajvide Lindqvist', 'Vampires', 'Horror', '9780312355296', 'Oct 2004', 'Yes'),
+    (29, 'I, Robot', 'Isaac Asimov', 'Artificial Intelligence', 'Science Fiction', '9780553294385', 'Dec 1950', 'Yes'),
+    (31, 'The Martian', 'Andy Weir', 'Space Exploration', 'Science Fiction', '9780553418026', 'Feb 2014', 'Yes'),
+    (32, "Ender's Game", 'Orson Scott Card', 'Space Exploration', 'Science Fiction', '9780812550702', 'Jan 1985', 'Yes'),
+    (35, "A People's History of the United States", 'Howard Zinn', 'History', 'Non-Fiction', '9780062397348', 'Nov 1980', 'Yes'),
+    (37, 'Night', 'Elie Wiesel', 'World War II', 'Memoir', '9780374500017', 'Sep 1956', 'Yes'),
+    (39, 'The Hunger Games', 'Suzanne Collins', 'Dystopian Societies', 'Young Adult', '9780439023528', 'Sep 2008', 'Yes'),
+    (40, '1984', 'George Orwell', 'Dystopian Societies', 'Science Fiction', '9780451524935', 'Jun 1949', 'Yes'),
+    (41, 'Percy Jackson & The Olympians: The Lightning Thief', 'Rick Riordan', 'Adventure', 'Fantasy', '9780786838653', 'Jun 2005', 'Yes'),
+    (47, 'Outlander', 'Diana Gabaldon', 'Love & Relationships', 'Romance', '9780440212560', 'Jun 1991', 'Yes'),
+    (49, 'Verity', 'Colleen Hoover', 'Psychological Thriller', 'Thriller', '9781791392796', 'Dec 2018', 'Yes'),
+    (53, 'Neuromancer', 'William Gibson', 'Artificial Intelligence', 'Science Fiction', '9780441569595', 'Jul 1984', 'Yes'),
+    (58, 'Into the Wild', 'Jon Krakauer', 'Survival', 'Non-Fiction', '9780385486804', 'Jan 1996', 'Yes'),
+    (59, 'The Nightingale', 'Kristin Hannah', 'History', 'Historical Fiction', '9780312577223', 'Feb 2015', 'Yes'),
+    (64, 'Fahrenheit 451', 'Ray Bradbury', 'Dystopian Societies', 'Science Fiction', '9781451673319', 'Oct 1953', 'Yes'),
+    (67, 'Circe', 'Madeline Miller', 'Greek Mythology', 'Fantasy', '9780316556347', 'Apr 2018', 'Yes'),
+    (69, 'The Glass Castle', 'Jeannette Walls', 'Memoir', 'Non-Fiction', '9780743247542', 'Mar 2005', 'Yes'),
+    (71, 'The Da Vinci Code', 'Dan Brown', 'Adventure', 'Mystery', '9780385504201', 'Mar 2003', 'Yes'),
+    (75, 'The Snowman', 'Jo Nesbo', 'Crime', 'Thriller', '9781101973738', 'Nov 2007', 'Yes'),
+    (78, 'A Court of Thorns and Roses', 'Sarah J. Maas', 'Love & Relationships', 'Fantasy', '9781619635180', 'May 2015', 'Yes'),
+    (79, 'Shutter Island', 'Dennis Lehane', 'Psychological Thriller', 'Mystery', '9780061898814', 'Apr 2003', 'Yes'),
+    (83, 'The Circle', 'Dave Eggers', 'Artificial Intelligence', 'Thriller', '9780385351393', 'Oct 2013', 'Yes'),
+    (92, 'Winter in Madrid', 'C.J. Sansom', 'World War II', 'Thriller', '9780330411981', 'Sep 2006', 'Yes'),
+    (96, 'The Seven Deaths of Evelyn Hardcastle', 'Stuart Turton', 'Time Travel', 'Mystery', '9781408889510', 'Feb 2018', 'Yes'),
+    (100, 'Smoke Gets in Your Eyes', 'Caitlin Doughty', 'Memoir', 'Mystery', '9780393351903', 'Sep 2014', 'Yes');
+
+GENRES:
+    Fantasy
+    Science Fiction
+    Mystery
+    Romance
+    Horror
+    Historical Fiction
+    Thriller
+    Non-Fiction
+
+TOPICS:
+    Adventure
+    Magic
+    Crime
+    Love & Relationships
+    Psychological Thriller
+    Vampires
+    Artificial Intelligence
+    Space Exploration
+    Survival
+    History
+    World War II
+    Dystopian Societies
+    Time Travel
+    Greek Mythology
+    Memoir

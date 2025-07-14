@@ -1,0 +1,112 @@
+--------------------------------
+/* PART 1. PreAsign05 - Pet */
+--------------------------------
+
+/* Create the Pet table */
+CREATE TABLE Pet(
+	PetID int PRIMARY KEY,
+	Name varchar(25),
+	Descript varchar(100)    
+);
+
+/* Insert 5 more elements to the Pet table */
+INSERT INTO Pet(PetID, Name, Descript) VALUES(1, 'Miguel', 'Lazy cat');
+INSERT INTO Pet(PetID, Name, Descript) VALUES(2, 'Gala', 'Crazy dog');
+INSERT INTO Pet(PetID, Name, Descript) VALUES(3, 'Tully', 'Small bird');
+INSERT INTO Pet(PetID, Name, Descript) VALUES(4, 'Rocket', 'Adorable turtle');
+INSERT INTO Pet(PetID, Name, Descript) VALUES(5, 'Puppy', 'White dog');
+
+/* Select all the columns from the Pet table */
+SELECT * FROM Pet;
+SELECT PetID, Name, Descript FROM Pet;
+
+/* Update one of the rows */
+UPDATE Pet SET Name='Super', Descript='Awesome Cat' WHERE PetID=1;
+
+/* Delete one of the rows. Do not delete the row you updated, delete a different row */
+DELETE FROM Pet WHERE PetID=5;
+
+--------------------------------
+/* PART 2. PreAsign05 - User */
+--------------------------------
+
+/* Create the tables Users, Accounts, Languages */
+-- User logins and passwords
+CREATE TABLE UserPreA5(
+     login varchar(20) PRIMARY KEY,
+     pass  varchar(25),
+     name  varchar(50)
+);
+
+-- Type of account user has
+-- User could have multiple accounts
+-- Stores each account a user has
+-- 1 (Admin), 2 (Team Leader), 3 (Manager), 4 (Moderator)
+-- 5 (Coding Lead), 6 (Programmer)
+CREATE TABLE AccountPreA5(
+     account int,
+     login varchar(20) REFERENCES UserPreA5(login),
+     descript varchar(100),
+     PRIMARY KEY(account, login)
+);
+
+-- Languages that each user knows
+-- User can know multiple languages
+-- Examples: C#, PHP, C++, Python...
+-- Proficiency:
+--   1 (novice), 2, 3, 4, 5 (Expert)
+CREATE TABLE LanguagePreA5(
+     language varchar(50),
+     login varchar(20) REFERENCES UserPreA5(login),
+     proficiency int,
+     PRIMARY KEY(language, login)
+);
+
+/* Insert 3 users to the UserPreA5 table */
+INSERT INTO UserPreA5(login, pass, name) VALUES('rauwleeto', 'MyPassword', 'Rauw Alejandro');
+INSERT INTO UserPreA5(login, pass, name) VALUES('badbu', 'Password123', 'Bad Bunny');
+INSERT INTO UserPreA5(login, pass, name) VALUES('alvarito', 'P4ssw0rd', 'Alvaro Diaz');
+
+/* Insert 2 accounts for each user, 6 statements in total */
+-- For user 1
+INSERT INTO AccountPreA5(account, login, descript) VALUES(1, 'rauwleeto', 'The admin');
+INSERT INTO AccountPreA5(account, login, descript) VALUES(6, 'rauwleeto', 'The programmer');
+-- For user 2
+INSERT INTO AccountPreA5(account, login, descript) VALUES(2, 'badbu', 'The team leader');
+INSERT INTO AccountPreA5(account, login, descript) VALUES(4, 'badbu', 'The moderator');
+-- For user 3
+INSERT INTO AccountPreA5(account, login, descript) VALUES(3, 'alvarito', 'The manager');
+INSERT INTO AccountPreA5(account, login, descript) VALUES(5, 'alvarito', 'The coding leader');
+
+/* Insert 3 languages for each user, 9 statements in total */
+-- For user 1
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('Python', 'rauwleeto', 3);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('PHP', 'rauwleeto', 4);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('C', 'rauwleeto', 2);
+-- For user 2
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('Python', 'badbu', 2);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('C', 'badbu', 3);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('Java', 'badbu', 4);
+-- For user 3
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('Python', 'alvarito', 4);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('C', 'alvarito', 5);
+INSERT INTO LanguagePreA5(language, login, proficiency) VALUES('C++', 'alvarito', 5);
+
+/* Select all the columns from the three tables */
+SELECT * FROM UserPreA5;
+SELECT * FROM AccountPreA5;
+SELECT * FROM LanguagePreA5;
+
+/* Update 1 entry in Account and Language */
+UPDATE AccountPreA5 SET account=3, login='rauwleeto', descript='The new manager' WHERE account=6 AND login='rauwleeto';
+UPDATE LanguagePreA5 SET language='Python', login='badbu', proficiency=3 WHERE language='Python' AND login='badbu';
+
+/* Delete 1 language for each user */
+DELETE FROM LanguagePreA5 WHERE language='Python' AND login='rauwleeto';
+DELETE FROM LanguagePreA5 WHERE language='C' AND login='badbu';
+DELETE FROM LanguagePreA5 WHERE language='Python' AND login='alvarito';
+
+/* Select the languages that each user knows */
+SELECT * FROM LanguagePreA5 WHERE login='rauwleeto';
+SELECT * FROM LanguagePreA5 WHERE login='badbu';
+SELECT * FROM LanguagePreA5 WHERE login='alvarito';
